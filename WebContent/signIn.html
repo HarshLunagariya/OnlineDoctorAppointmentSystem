@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>  
+<html>
+<body >
+
+<h2>Sign In</h2>
+   
+<!-- Nav bar -->
+<div id="div2">
+  <nav>
+  	<form action="index.jsp" method="post"><button type="submit">Home</button></form>
+</nav>
+</div>    
+<button id="user_button" style="color:dodgerblue">user</button><br>
+<button id="doctor_button" style="color:black">doctor</button>
+<div class="user">
+<form action="signInUser" method="post">
+		<div class="container">
+			<h1>Sign In</h1>
+			<hr>
+
+			<label for="id"><b>User Id</b></label><br> 
+			<input type="number" placeholder="Enter Id" name="id" required><br>
+			<label for="name"><b>Name</b></label><br> 
+			<input type="text" placeholder="Enter Name" name="name" required><br> 
+			<label for="psw"><b>Password</b></label><br> 
+			<input type="password" placeholder="Enter Password" name="psw" required><br>
+
+			<div class="clearfix">
+				<button type="reset" class="cancelbtn">Cancel</button>
+				<button type="submit" class="signupbtn">Sign In</button>
+			</div>
+			<a href="signUpUser.html">Not with us? Get Registered</a>
+		</div>
+	</form>
+</div>
+<div class="doctor">
+<form action="signInDoctor" method="post">
+		<div class="container">
+			<h1>Sign In</h1>
+			<hr>
+			
+			<label for="id"><b>Doctor Id</b></label><br> 
+			<input type="number" placeholder="Enter Id" name="id" required><br>
+			<label for="name"><b>Name</b></label><br> 
+			<input type="text" placeholder="Enter Name" name="name" required><br> 
+			<label for="psw"><b>Password</b></label><br> 
+			<input type="password" placeholder="Enter Password" name="psw" required><br>
+
+			<div class="clearfix">
+				<button type="reset" class="cancelbtn">Cancel</button>
+				<button type="submit" class="signupbtn">Sign In</button>
+			</div>
+			<a href="signUpDoctor.html">Not with us? Get Registered</a>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">  
+$(document).ready(function()  
+{
+	$('#user_button').css("color","blue"); 
+    $('.doctor').hide();  
+    $('#user_button').click(function()  
+    {  
+    $('.doctor').slideUp('slow');
+    $('.user').slideDown('slow');
+	$('#doctor_button').css("color","black");
+	$('#user_button').css("color","blue");  
+    });  
+    $('#doctor_button').click(function()  
+    {  
+        $('.user').slideUp('slow');  
+        $('.doctor').slideDown('slow'); 
+        $('#user_button').css("color","black");
+		$('#doctor_button').css("color","blue"); 	
+    });   
+});  
+</script>  
+
+</body>
+</html>
+
